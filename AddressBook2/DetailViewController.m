@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "AddressBook.h"
 
 @interface DetailViewController ()
 
@@ -26,7 +27,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
+    if (self.addressBook) {
+        self.nameLabel.text = self.addressBook.name;
+        self.telLabel.text = self.addressBook.tel;
+        self.emailLabel.text = self.addressBook.email;
+    }
+
+    // スワイプジェスチャーを作成して、登録する。
+    UISwipeGestureRecognizer *swipe
+            = [[UISwipeGestureRecognizer alloc]
+                    initWithTarget:self action:@selector(swipeBack:)];
+    // スワイプの方向は右方向を指定する。
+    swipe.direction = UISwipeGestureRecognizerDirectionRight;
+    // スワイプ動作に必要な指は1本と指定する。
+    swipe.numberOfTouchesRequired = 1;
+    [self.view addGestureRecognizer:swipe];
+}
+
+- (void)swipeBack:(UISwipeGestureRecognizer *)gesture
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

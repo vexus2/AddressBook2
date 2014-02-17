@@ -10,7 +10,7 @@
 
 @interface AddressBookDao : NSObject
 - (AddressBook*)add:(AddressBook*)addressBook;
-- (NSArray*)books;
+- (NSArray*)addressBooks;
 - (BOOL)remove:(NSInteger)id;
 - (BOOL)update:(AddressBook*)addressBook;
 @end

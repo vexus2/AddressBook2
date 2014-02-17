@@ -10,6 +10,7 @@
 #import "ModalFormViewController.h"
 #import "AddressBookDao.h"
 #import "AddressBook.h"
+#import "DetailViewController.h"
 
 @interface MasterTableViewController ()
 
@@ -22,6 +23,7 @@
     [super awakeFromNib];
     //TODO: DBから全データ取ってくる
     self.addressList = [[NSMutableArray alloc] init];
+    self.dao = [[AddressBookDao alloc] init];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -37,7 +39,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.dao = [[AddressBookDao alloc] init];
+    NSArray *addressBooks = [self.dao addressBooks];
+    for (AddressBook *book in addressBooks) {
+        [self.addressList addObject:book];
+    }
 
 }
 
@@ -110,8 +115,28 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return NO;
+    return YES;
 }
 
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //add code here for when you hit delete
+        AddressBook *addressBook = [self.addressList objectAtIndex:indexPath.row];
+        // Delete line record when success delete from db
+        if ([[self dao] remove:addressBook.id]) {
+            [self.addressList removeObjectAtIndex:indexPath.row];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"ShowAddressBookDetail"]) {
+        DetailViewController *detailViewController = [segue destinationViewController];
+        detailViewController.addressBook = [self.addressList objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+    }
+}
 
 @end

@@ -8,6 +8,12 @@
 
 
 
-@interface DetailViewController : UIViewController
+@class AddressBook;
 
+@interface DetailViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *telLabel;
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+
+@property(nonatomic, strong) AddressBook * addressBook;
 @end

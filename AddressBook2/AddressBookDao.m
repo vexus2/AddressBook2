@@ -95,6 +95,7 @@
         addressBook.id = [results intForColumnIndex:0];
         addressBook.name = [results stringForColumnIndex:1];
         addressBook.tel = [results stringForColumnIndex:2];
+        addressBook.email = [results stringForColumnIndex:3];
 
         [addressBooks addObject:addressBook];
     }

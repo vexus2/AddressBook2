@@ -21,6 +21,7 @@
 		14F6691D8658A1D190B38927 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F66F18366E357507764C9D /* AppDelegate.m */; };
 		14F66A8859826FB6D25B519F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14F66C3391E630B63E0499C7 /* InfoPlist.strings */; };
 		14F66B5A8C4B7CBDAC6C3522 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F66C2E5AC4B815331AC020 /* Foundation.framework */; };
+		14F66B99BCA62A6924635BC1 /* EditContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F66B9124097051B21AB3BA /* EditContactViewController.m */; };
 		14F66D0406BC0CD1FD795222 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14F66458849C9531891DD106 /* Images.xcassets */; };
 		14F66DA087B4DEF894D26131 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F666D894EC72DA5377C53D /* DetailViewController.m */; };
 		14F66E5BC926AD3544C9BF68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F66D0649E8D0112F927CB3 /* UIKit.framework */; };
@@ -50,6 +51,7 @@
 		14F66458849C9531891DD106 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		14F664D31940A819D2B8396D /* AddressBookDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookDao.h; sourceTree = "<group>"; };
 		14F664DDFE166867810C036B /* MasterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterTableViewController.m; sourceTree = "<group>"; };
+		14F665DB05E1BF3756F436F3 /* EditContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditContactViewController.h; sourceTree = "<group>"; };
 		14F666A80C0651DA758C3498 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		14F666D894EC72DA5377C53D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		14F6670D2322BC3CBD918E67 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		14F669432290AEB9E319C9E5 /* AddressBook2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "AddressBook2-Info.plist"; sourceTree = "<group>"; };
 		14F66AF5B2D7AE67D16EDC96 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		14F66B38D94F358D4CB6C5FD /* AddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBook.h; sourceTree = "<group>"; };
+		14F66B9124097051B21AB3BA /* EditContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditContactViewController.m; sourceTree = "<group>"; };
 		14F66BA2A2FEC8D452F44211 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		14F66C2E5AC4B815331AC020 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		14F66C9C5D0FF68A45D60111 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -145,6 +148,8 @@
 				14F664D31940A819D2B8396D /* AddressBookDao.h */,
 				14F6624BDF81E1AB8EDEE320 /* AddressBook.m */,
 				14F66B38D94F358D4CB6C5FD /* AddressBook.h */,
+				14F665DB05E1BF3756F436F3 /* EditContactViewController.h */,
+				14F66B9124097051B21AB3BA /* EditContactViewController.m */,
 			);
 			path = AddressBook2;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 				14F668E19389CF7B9AD1575C /* ModalFormViewController.m in Sources */,
 				14F66F7A7D4661BB576D88C7 /* AddressBookDao.m in Sources */,
 				14F6604897A5CDA2EAF92DE6 /* AddressBook.m in Sources */,
+				14F66B99BCA62A6924635BC1 /* EditContactViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

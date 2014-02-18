@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "AddressBook.h"
+#import "EditContactViewController.h"
 
 @interface DetailViewController ()
 
@@ -55,5 +56,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"editContact"]) {
+        EditContactViewController *editContactViewController = [segue destinationViewController];
+        editContactViewController.addressBook = self.addressBook;
+        editContactViewController.indexPath = self.indexPath;
+    }
+}
+
 
 @end

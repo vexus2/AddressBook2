@@ -11,6 +11,7 @@
 #import "AddressBookDao.h"
 #import "AddressBook.h"
 #import "DetailViewController.h"
+#import "EditContactViewController.h"
 
 @interface MasterTableViewController ()
 
@@ -77,6 +78,21 @@
     }
 }
 
+- (IBAction)editSave:(UIStoryboardSegue *)segue
+{
+    if ([[segue identifier] isEqualToString:@"EditInput"]) {
+
+        EditContactViewController *editContactViewController = [segue sourceViewController];
+
+        AddressBook *addressBook = [[AddressBook alloc] initWithId:[editContactViewController addressBook].id name:[editContactViewController nameField].text tel:[editContactViewController telField].text email:[editContactViewController emailField].text];
+        [self.dao update:addressBook];
+        [self.addressList replaceObjectAtIndex:[editContactViewController indexPath].row withObject:addressBook];
+        [[self tableView] reloadData];
+
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
+}
+
 
 #pragma mark - Table View
 
@@ -119,7 +135,8 @@
 }
 
 // Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         //add code here for when you hit delete
         AddressBook *addressBook = [self.addressList objectAtIndex:indexPath.row];
@@ -136,6 +153,7 @@
     if ([[segue identifier] isEqualToString:@"ShowAddressBookDetail"]) {
         DetailViewController *detailViewController = [segue destinationViewController];
         detailViewController.addressBook = [self.addressList objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        detailViewController.indexPath = [self.tableView indexPathForSelectedRow];
     }
 }
 

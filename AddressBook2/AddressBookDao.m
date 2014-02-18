@@ -8,6 +8,7 @@
 
 #define SQL_CREATE @"CREATE TABLE IF NOT EXISTS addressBooks (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, tel TEXT, email TEXT);"
 #define SQL_INSERT @"INSERT INTO addressBooks (name, tel, email) VALUES (?, ?, ?);"
+#define SQL_EDIT   @"UPDATE addressBooks set name = ?, tel = ?, email = ? WHERE id = ?;"
 #define SQL_UPDATE @"UPDATE addressBooks SET name = ?, tel = ?, email = ? WHERE id = ?;"
 #define SQL_SELECT @"SELECT id, name, tel, email FROM addressBooks GROUP BY name, tel;"
 #define SQL_DELETE @"DELETE FROM addressBooks WHERE id = ?;"

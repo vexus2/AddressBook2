@@ -14,4 +14,7 @@
 
 - (instancetype)initWithEmail:(NSString *)email tel:(NSString *)tel name:(NSString *)name;
 
+- (instancetype)initWithId:(NSInteger *)id name:(NSString *)name tel:(NSString *)tel email:(NSString *)email;
+
+
 @end

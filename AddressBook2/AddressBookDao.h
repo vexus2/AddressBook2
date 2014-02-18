@@ -13,4 +13,6 @@
 - (NSArray*)addressBooks;
 - (BOOL)remove:(NSInteger)id;
 - (BOOL)update:(AddressBook*)addressBook;
+
+- (AddressBook *)edit:(AddressBook *)book;
 @end

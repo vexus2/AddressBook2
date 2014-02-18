@@ -22,4 +22,18 @@
     return self;
 }
 
+- (instancetype)initWithId:(NSInteger *)id name:(NSString *)name tel:(NSString *)tel email:(NSString *)email
+{
+    self = [super init];
+    if (self) {
+        self.id = id;
+        self.name = name;
+        self.tel = tel;
+        self.email = email;
+    }
+
+    return self;
+}
+
+
 @end
